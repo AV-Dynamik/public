@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ikkunan ja Oven Tietomalli</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .field {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .field-name {
+            font-weight: bold;
+            color: #3498db;
+        }
+        .field-values {
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+        .field-values li {
+            margin-bottom: 5px;
+        }
+        .note {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ikkunan ja Oven Tietomalli</h1>
+    
+    <p class="note">Huomio: Tyhjä arvo tarkoittaa, ettei arvoa ole annettu ja järjestelmä käyttää oletusarvoa.</p>
+
+    <h2>Yleiset Kentät</h2>
+    <div class="field">
+        <span class="field-name">letter:</span> Ikkunan tai oven tunniste
+    </div>
+    <div class="field">
+        <span class="field-name">qty:</span> Määrä
+    </div>
+    <div class="field">
+        <span class="field-name">product:</span>
+        <ul class="field-values">
+            <li>window</li>
+            <li>door</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">model:</span>
+        <ul class="field-values">
+            <li>A, B, T, E, H, I, F, S, C, G, D, J, R, K, L, M, N, P, W, Y, KO, Q</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">width:</span> Leveys millimetreinä
+    </div>
+    <div class="field">
+        <span class="field-name">height:</span> Korkeus millimetreinä
+    </div>
+    <div class="field">
+        <span class="field-name">inner_sillheight:</span> Sisäpuolinen kynnyskorkeus
+    </div>
+
+    <h2>Ikkunakohtaiset Kentät (w_)</h2>
+    <div class="field">
+        <span class="field-name">w_type:</span>
+        <ul class="field-values">
+            <li>MSEA</li>
+            <li>MEKA</li>
+            <li>MSA</li>
+            <li>MS1A</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">w_structure:</span>
+        <ul class="field-values">
+            <li>basic (oletus)</li>
+            <li>EI</li>
+            <li>dB</li>
+            <li>EI/dB</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">w_frame.depth:</span>
+        <ul class="field-values">
+            <li>96, 115, 130, 150, 170, 210</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">w_frame.list.color.system:</span>
+        <ul class="field-values">
+            <li>RAL</li>
+            <li>RR</li>
+            <li>Anodized</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">w_frame.list.color.code:</span> Väri w_frame.list.color.system:n mukaan
+    </div>
+    <div class="field">
+        <span class="field-name">w_frame.color.system:</span>
+        <ul class="field-values">
+            <li>NCS</li>
+            <li>Teknos</li>
+            <li>Tikkurila</li>
+            <li>Puuvalmis</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">w_frame.color.code:</span> Väri w_frame.color.system:n mukaan
+    </div>
+    <div class="field">
+        <span class="field-name">w_frame.assemblyholes:</span>
+        <ul class="field-values">
+            <li>none (oletus)</li>
+            <li>default</li>
+            <li>defaultx2</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">w_valve.value:</span>
+        <ul class="field-values">
+            <li>Biobe VS-40</li>
+            <li>Biobe VS-40 dB</li>
+            <li>Biobe VS-60</li>
+            <li>Biobe VS-60 dB</li>
+            <li>Biobe DUO40</li>
+            <li>Biobe DUO60</li>
+            <li>Biobe DUO40 dB</li>
+            <li>Biobe DUO60 dB</li>
+            <li>Biobe VS-30</li>
+            <li>OneWay Raitisilmaventtiili</li>
+            <li>Biobe VS-50</li>
+            <li>Biobe DUO30 dB</li>
+            <li>Biobe Airmax 400 DB</li>
+            <li>Biobe Airmax 400</li>
+            <li>Biobe Airmax 600 DB</li>
+            <li>Biobe Airmax 600</li>
+            <li>Biobe Thermoplus 40</li>
+            <li>Biobe Thermoplus 60</li>
+            <li>Biobe Thermomax A 40</li>
+            <li>Biobe Thermomax A 60</li>
+            <li>Air-In 400S TI</li>
+            <li>Air-In 600S TI</li>
+            <li>Air Termico 600</li>
+            <li>Air Termico 800</li>
+            <li>Air Termico 1000</li>
+            <li>OneWay Tuloilmaventtiili</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">w_valve.positions:</span>
+        <ul class="field-values">
+            <li>0 (oletus, venttiili keskitetään karmin keskikohdan mukaan)</li>
+            <li>1+ (numero kertoo aukon, johon venttiili keskitetään)</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">w_fitting.signalrepeater.value:</span>
+        <ul class="field-values">
+            <li>none</li>
+            <li>joku</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">w_fitting.signalrepeater.colorin:</span> white
+    </div>
+    <div class="field">
+        <span class="field-name">w_fitting.signalrepeater.colorout:</span> white
+    </div>
+    <div class="field">
+        <span class="field-name">w_fitting.signalrepeater.qty:</span> Kappalemäärä
+    </div>
+    <div class="field">
+        <span class="field-name">w_uvaluemax:</span> Desimaaliluku (esim. 0.62-2.5)
+    </div>
+    <div class="field">
+        <span class="field-name">w_gvaluemin:</span> Desimaaliluku (esim. 0.55)
+    </div>
+    <div class="field">
+        <span class="field-name">w_dbctrmin:</span> Kokonaisluku
+    </div>
+    <div class="field">
+        <span class="field-name">w_antifog:</span>
+        <ul class="field-values">
+            <li>no</li>
+            <li>ac</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">w_sight:</span>
+        <ul class="field-values">
+            <li>clear</li>
+            <li>crepi</li>
+            <li>cotswold</li>
+            <li>etched</li>
+            <li>milkglass</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">w_signal:</span>
+        <ul class="field-values">
+            <li>no</li>
+            <li>signal</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">w_mullions:</span> Millimetrejä vasemman karmin ulkoreunasta
+    </div>
+    <div class="field">
+        <span class="field-name">w_transoms:</span> Millimetrejä alakarmin ulkoreunasta
+    </div>
+
+    <h2>Puitteisiin Liittyvät Kentät</h2>
+    <div class="field">
+        <span class="field-name">outersash.outercolor.system:</span>
+        <ul class="field-values">
+            <li>RAL</li>
+            <li>RR</li>
+            <li>Anodized</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">outersash.outercolor.code:</span> Väri outersash.outercolor.system:n mukaan
+    </div>
+    <div class="field">
+        <span class="field-name">outersash.innercolor.system:</span>
+        <ul class="field-values">
+            <li>RAL</li>
+            <li>RR</li>
+            <li>Anodized</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">outersash.innercolor.code:</span> Väri outersash.innercolor.system:n mukaan
+    </div>
+    <div class="field">
+        <span class="field-name">innersash.color.system:</span>
+        <ul class="field-values">
+            <li>NCS</li>
+            <li>Teknos</li>
+            <li>Tikkurila</li>
+            <li>Puuvalmis</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">innersash.color.code:</span> Väri innersash.color.system:n mukaan
+    </div>
+
+    <h2>Aukkoihin Liittyvät Kentät (w_openings)</h2>
+    <div class="field">
+        <span class="field-name">type:</span>
+        <ul class="field-values">
+            <li>window</li>
+            <li>ventilation</li>
+            <li>hatch</li>
+            <li>exit</li>
+            <li>ioss</li>
+            <li>ioss2</li>
+            <li>ioss3</li>
+            <li>iossfull</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">hand:</span>
+        <ul class="field-values">
+            <li>left</li>
+            <li>right</li>
+            <li>top</li>
+            <li>bottom</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">surfaceblind.type:</span>
+        <ul class="field-values">
+            <li>none</li>
+            <li>vekki classic</li>
+            <li>vekki darkening</li>
+            <li>surface acryl</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">surfaceblind.color:</span> Riippuu tyypistä
+    </div>
+    <div class="field">
+        <span class="field-name">blind.type:</span>
+        <ul class="field-values">
+            <li>none</li>
+            <li>classic</li>
+            <li>integrated</li>
+            <li>integrated indriven</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">blind.color:</span> Riippuu tyypistä
+    </div>
+    <div class="field">
+        <span class="field-name">blind.slat:</span>
+        <ul class="field-values">
+            <li>normal</li>
+            <li>perforated</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">grid.model:</span>
+        <ul class="field-values">
+            <li>R12, R21, R22, R23, R31, R32, R33</li>
+            <li>S (sakaramalli)</li>
+            <li>T (t-malli)</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">grid.transomy:</span> S ja T-malleissa vaakariman paikka mm karmin päältä riman keskelle
+    </div>
+    <div class="field">
+        <span class="field-name">grid.mosquitonet:</span>
+        <ul class="field-values">
+            <li>none</li>
+            <li>aluminium</li>
+            <li>nylon</li>
+            <li>strong nylon</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">outersash.grid.model:</span>
+        <ul class="field-values">
+            <li>R12, R21, R22, R23, R31, R32, R33</li>
+            <li>S (sakaramalli)</li>
+            <li>T (t-malli)</li>
+        </ul>
+    </div>
+    <div class="field">
+        <span class="field-name">outersash.grid.transomy:</span> S ja T-malleissa vaakariman paikka mm karmin päältä riman keskelle
+    </div>
